@@ -3,12 +3,14 @@ import { useState } from 'react'
 import './App.css'
 import Info from './hooks/Info'
 import { InputBox } from './components/index.js'
+
+
+
 function App() {
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState(10)
   const [from, setFrom] = useState('usd')
   const [to, setTo] = useState('inr')
   const [convertedAmount, setConvertedAmount] = useState(0)
-
   const currencyInfo = Info(from)
   const options = Object.keys(currencyInfo)
 
@@ -44,7 +46,7 @@ function App() {
               />
               
             </div>
-            <div className='relative w-full h-0.5'>
+            <div className=' relative w-full h-0.5'>
               <button
                 className='absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5'
                 onClick={swap}
